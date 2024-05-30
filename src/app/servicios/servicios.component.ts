@@ -7,12 +7,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./servicios.component.css']
 })
 export class ServiciosComponent implements OnInit {
+  segurosOpciones: string[] = [];
+  telefoniaOpciones: string[] = [];
+  viajesOpciones: string[] = [];
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  goToProductos() {
+    this.router.navigate(['../productos']);
   }
-  goToProductos(){
-    this.router.navigate(['../productos'])
+
+  actualizarSegurosOpciones(opciones: string[]) {
+    this.segurosOpciones = opciones;
+  }
+
+  actualizarTelefoniaOpciones(opciones: string[]) {
+    this.telefoniaOpciones = opciones;
+  }
+
+  actualizarViajesOpciones(opciones: string[]) {
+    this.viajesOpciones = opciones;
   }
 }
