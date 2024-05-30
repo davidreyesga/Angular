@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-telefonia',
@@ -6,13 +6,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./telefonia.component.css']
 })
 export class TelefoniaComponent implements OnInit {
-  opciones: string[] = ['Plan básico', 'Plan familiar', 'Plan ilimitado'];
+  @Output() servicioChange = new EventEmitter<string[]>();
 
-  @Output() opcionesChange = new EventEmitter<string[]>();
+  telefonia: string[] = ['Plan de telefonía móvil', 'Internet de alta velocidad'];
 
   constructor() {}
 
-  ngOnInit() {
-    this.opcionesChange.emit(this.opciones);
+  ngOnInit(): void {
+    this.servicioChange.emit(this.telefonia);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-seguros',
@@ -6,13 +6,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./seguros.component.css']
 })
 export class SegurosComponent implements OnInit {
-  opciones: string[] = ['Seguro de vida', 'Seguro de salud', 'Seguro de auto'];
+  @Output() servicioChange = new EventEmitter<string[]>();
 
-  @Output() opcionesChange = new EventEmitter<string[]>();
+  seguros: string[] = ['Seguro de vida', 'Seguro de salud', 'Seguro de auto'];
 
   constructor() {}
 
-  ngOnInit() {
-    this.opcionesChange.emit(this.opciones);
+  ngOnInit(): void {
+    this.servicioChange.emit(this.seguros);
   }
 }

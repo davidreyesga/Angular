@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-servicios',
@@ -7,27 +7,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./servicios.component.css']
 })
 export class ServiciosComponent implements OnInit {
-  segurosOpciones: string[] = [];
-  telefoniaOpciones: string[] = [];
-  viajesOpciones: string[] = [];
+  servicioList: string[] = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
+  onServicioChange(servicios: string[]) {
+    setTimeout(() => {
+      this.servicioList = [...this.servicioList, ...servicios];
+    });
+  }
+  goToSeguros() {
+    this.router.navigate(['./seguros'], { relativeTo: this.route });
+  }
+
+  goToTelefonia() {
+    this.router.navigate(['./telefonia'], { relativeTo: this.route });
+  }
+
+  goToViajes() {
+    this.router.navigate(['./viajes'], { relativeTo: this.route });
+  }
   goToProductos() {
     this.router.navigate(['../productos']);
-  }
-
-  actualizarSegurosOpciones(opciones: string[]) {
-    this.segurosOpciones = opciones;
-  }
-
-  actualizarTelefoniaOpciones(opciones: string[]) {
-    this.telefoniaOpciones = opciones;
-  }
-
-  actualizarViajesOpciones(opciones: string[]) {
-    this.viajesOpciones = opciones;
   }
 }

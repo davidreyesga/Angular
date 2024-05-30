@@ -1,23 +1,29 @@
-<p>servicios works!</p>
-<button (click)="goToProductos()">Ir a Productos</button>
-
-<h1>Resumen de Opciones de Servicios</h1>
-
-<h2>Opciones de Seguros</h2>
-<ul>
-  <li *ngFor="let opcion of segurosOpciones">{{ opcion }}</li>
-</ul>
-
-<h2>Opciones de Telefonía</h2>
-<ul>
-  <li *ngFor="let opcion of telefoniaOpciones">{{ opcion }}</li>
-</ul>
-
-<h2>Opciones de Viajes</h2>
-<ul>
-  <li *ngFor="let opcion of viajesOpciones">{{ opcion }}</li>
-</ul>
-
-<app-seguros (opcionesChange)="actualizarSegurosOpciones($event)"></app-seguros>
-<app-telefonia (opcionesChange)="actualizarTelefoniaOpciones($event)"></app-telefonia>
-<app-viajes (opcionesChange)="actualizarViajesOpciones($event)"></app-viajes>
+<div class="container">
+    <h1>Servicios Disponibles</h1>
+    <div class="servicios">
+        <div class="servicio">
+            <h2>Seguros</h2>
+            <app-seguros (servicioChange)="onServicioChange($event)"></app-seguros>
+            <button (click)="goToSeguros()">Ir a Seguros</button>
+        </div>
+        
+        <div class="servicio">
+            <h2>Telefonía</h2>
+            <app-telefonia (servicioChange)="onServicioChange($event)"></app-telefonia>
+            <button (click)="goToTelefonia()">Ir a Telefonía</button>
+        </div>
+        
+        <div class="servicio">
+            <h2>Viajes</h2>
+            <app-viajes (servicioChange)="onServicioChange($event)"></app-viajes>
+            <button (click)="goToViajes()">Ir a Viajes</button>
+        </div>
+        </div>
+        
+        <div class="productos">
+        <h2>Productos</h2>
+        <p>Pero si prefieres ver nuestros productos entra aquí:</p>
+        <button (click)="goToProductos()">Ir a Productos</button>
+        </div>
+    </div>
+    

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-viajes',
@@ -6,13 +6,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./viajes.component.css']
 })
 export class ViajesComponent implements OnInit {
-  opciones: string[] = ['Viaje nacional', 'Viaje internacional', 'Crucero'];
+  @Output() servicioChange = new EventEmitter<string[]>();
 
-  @Output() opcionesChange = new EventEmitter<string[]>();
+  viajes: string[] = ['Paquete de viaje a Europa', 'Crucero por el Caribe'];
 
   constructor() {}
 
-  ngOnInit() {
-    this.opcionesChange.emit(this.opciones);
+  ngOnInit(): void {
+    this.servicioChange.emit(this.viajes);
   }
 }
