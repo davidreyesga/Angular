@@ -1,0 +1,39 @@
+.container {
+    padding: 20px;
+    background-color: #ece7e7;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+mat-toolbar {
+    background-color: #ffffff;
+}
+
+mat-card {
+    width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-title {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #ece7e7;
+}
+
+button {
+    width: 100%;
+    background-color: #ece7e7;
+}

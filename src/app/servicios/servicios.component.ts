@@ -14,10 +14,9 @@ export class ServiciosComponent implements OnInit {
   ngOnInit(): void {}
 
   onServicioChange(servicios: string[]) {
-    setTimeout(() => {
-      this.servicioList = [...this.servicioList, ...servicios];
-    });
+    this.servicioList = [...this.servicioList, ...servicios];
   }
+
   goToSeguros() {
     this.router.navigate(['./seguros'], { relativeTo: this.route });
   }
@@ -29,6 +28,7 @@ export class ServiciosComponent implements OnInit {
   goToViajes() {
     this.router.navigate(['./viajes'], { relativeTo: this.route });
   }
+
   goToProductos() {
     this.router.navigate(['../productos']);
   }
