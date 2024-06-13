@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms'; // Importa ReactiveFormsModule
 
 @NgModule({
   declarations: [LogInComponent],
@@ -19,7 +20,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule // Importa el módulo de iconos
+    MatIconModule,
+    ReactiveFormsModule // Agrega ReactiveFormsModule aquí
   ]
 })
 export class LogInModule { }
