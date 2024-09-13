@@ -5,6 +5,7 @@ const routes: Routes = [
   { path: 'servicios', loadChildren: () => import('./servicios/servicios.module').then(m => m.ServiciosModule) },
   { path: 'productos', loadChildren: () => import('./productos/productos.module').then(m => m.ProductosModule) },
   { path: 'login', loadChildren: () => import('./log-in/log-in.module').then(m => m.LogInModule) },
+  { path: 'characters', loadChildren: () => import('./characters/characters.module').then(m => m.CharactersModule) } , 
   { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterModule) },
   { path: 'productos/electronica', loadChildren: () => import('./productos/electronica/electronica.module').then(m => m.ElectronicaModule) },
   { path: 'productos/herramienta', loadChildren: () => import('./productos/herramienta/herramienta.module').then(m => m.HerramientaModule) },

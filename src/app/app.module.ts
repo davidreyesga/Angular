@@ -8,7 +8,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { LogInModule } from './log-in/log-in.module'; // Asegúrate de que está importado
+import { LogInModule } from './log-in/log-in.module';
+import { CharactersModule } from './characters/characters.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +23,9 @@ import { LogInModule } from './log-in/log-in.module'; // Asegúrate de que está
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    LogInModule // Importa el módulo LogIn
+    LogInModule ,
+    CharactersModule,
+    HttpClientModule// Importa el módulo LogIn
   ],
   providers: [],
   bootstrap: [AppComponent]

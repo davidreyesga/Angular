@@ -38,6 +38,6 @@ export class LogInComponent implements OnInit {
 
     this.invalidCredentials = user ? false : true;
 
-    user ? this.router.navigate(['/servicios'], { queryParams: { email } }) : null;
+    user ? this.router.navigate(['/characters'], { queryParams: { email } }) : null;
   }
 }

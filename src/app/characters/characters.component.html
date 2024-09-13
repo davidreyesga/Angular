@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Personajes de Rick and Morty</h1>
+    <table>
+    <thead>
+        <tr>
+        <th>Nombre</th>
+        <th>Planeta</th>
+        <th>Status</th>
+        <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let character of characters">
+        <td>{{ character.name }}</td>
+        <td>{{ character.origin.name }}</td>
+        <td>{{ character.status }}</td>
+        <td><button>Acción</button></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
