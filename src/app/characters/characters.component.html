@@ -14,7 +14,7 @@
         <td>{{ character.name }}</td>
         <td>{{ character.origin.name }}</td>
         <td>{{ character.status }}</td>
-        <td><button>Acción</button></td>
+        <td><button (click)="redirectToLogin(character)">Volver al Login</button></td>
         </tr>
     </tbody>
     </table>
