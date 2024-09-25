@@ -21,8 +21,8 @@ export class CharactersComponent implements OnInit {
 
     redirectToLogin(character: any): void {
         // Guarda el nombre y el planeta del personaje en localStorage
-        sessionStorage.setItem('user', character.name);
-        sessionStorage.setItem('password', character.origin.name);
+        sessionStorage.setItem('userAPI', character.name);
+        sessionStorage.setItem('passwordAPI', character.origin.name);
 
         // Redirige al usuario al login
         this.router.navigate(['/login']);

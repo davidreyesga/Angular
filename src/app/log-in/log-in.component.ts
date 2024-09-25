@@ -20,7 +20,7 @@ export class LogInComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required,]],
       password: ['', Validators.required]
     });
   }
@@ -34,10 +34,17 @@ export class LogInComponent implements OnInit {
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
 
-    const user = this.profiles.find(profile => profile.email === email && profile.password === password);
+    // Comprueba si el usuario y la contraseña coinciden con los datos almacenados en sessionStorage
+    const sessionStorageEmail = sessionStorage.getItem('userAPI');
+    const sessionStoragePassword = sessionStorage.getItem('passwordAPI');
+
+    const user = this.profiles.find(profile => profile.email === email && profile.password === password)
+      || (email === sessionStorageEmail && password === sessionStoragePassword);
 
     this.invalidCredentials = user ? false : true;
 
-    user ? this.router.navigate(['/characters'], { queryParams: { email } }) : null;
+    if (user) {
+      this.router.navigate(['/characters'], { queryParams: { email } });
+    }
   }
 }
