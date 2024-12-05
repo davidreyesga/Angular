@@ -31,9 +31,22 @@ mat-form-field {
     width: 100%;
     margin-bottom: 20px;
     background-color: #ece7e7;
+    align-items: center;
 }
 
-button {
-    width: 100%;
-    background-color: #ece7e7;
+button.mdc-button.mdc-button--raised.mat-mdc-raised-button.mat-unthemed.mat-mdc-button-base{
+    padding: 6px 12px;
+    background: #FF5A70;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 192px;
+    height: 58px;
+    border-radius: 5px;
+    font-family: 'Aileron', sans-serif ;
+    font-size: 18px;
+    align-items: center;
+}
+button :hover {
+    background-color: #555;
 }
